@@ -43,9 +43,9 @@ Los datos limpiados y procesados se cargarán en la carpeta ejercicio1/processed
 --------------------------------------------------------------------
 
 1. Para los ids nulos ¿Qué sugieres hacer con ellos ?
-   - En este caso se eliminan y no forman parte de la agregacion y asi no afectar el reporte derivado antes de saber que es lo que esta pasando, luego se imprime una alerta para que este problema sea investigado ya que en una base de transacciones nunca deberia haber ingresos o egresos con identificadores faltantes
+  - En este caso se eliminan y no forman parte de la agregacion y asi no afectar el reporte derivado antes de saber que es lo que esta pasando, luego se imprime una alerta para que este problema sea investigado ya que en una base de transacciones nunca deberia haber ingresos o egresos con identificadores faltantes
 2. Considerando las columnas name y company_id ¿Qué inconsistencias notas y como las mitigas?
-   - En ambas columnas se observan datos faltantes y erroneos, ya que los errores son minoria, la solucion es crear un mapa donde la combinacion por cada company_id y name mas comun sea la que prevalesca, por ejemplo si el company_id 1 tiene 20 filas con name X, y solo 5 con name Y, el name Y sera reemplazado por el name X en todas las filas
+  - En ambas columnas se observan datos faltantes y erroneos, ya que los errores son minoria, la solucion es crear un mapa donde la combinacion por cada company_id y name mas comun sea la que prevalesca, por ejemplo si el company_id 1 tiene 20 filas con name X, y solo 5 con name Y, el name Y sera reemplazado por el name X en todas las filas
 3. Para el resto de los campos ¿Encuentras valores atípicos y de ser así cómo procedes?
   - No se encontraron transacciones pagadas sin fecha de pago
   - Se encontraron IDs de transaccion faltantes
