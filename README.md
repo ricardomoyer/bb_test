@@ -19,7 +19,7 @@ git clone https://github.com/ricardomoyer/bb_test.git
 cd bb_test
 
 ### Paso 2: Configurar Airflow
-Asegúrese de que su entorno Airflow está configurado correctamente. Coloque el DAG (ejercicio1_pipeline.py) en la carpeta dags de su instalación de Airflow.
+Asegúrese de que su entorno Airflow está configurado correctamente. Coloque el DAG (ejercicio1_pipeline.py) en la carpeta dags de su instalación de Airflow o clone el codigo directamente de github mediante un sidecar
 
 ### Paso 3: Instalar dependencias
 Instale los paquetes Python necesarios en su entorno Airflow:
