@@ -17,23 +17,23 @@ Este repositorio contiene un proceso de datos construido con Apache Airflow para
 
 git clone https://github.com/ricardomoyer/bb_test.git
 cd bb_test
-Paso 2: Configurar Airflow
+### Paso 2: Configurar Airflow
 Asegúrese de que su entorno Airflow está configurado correctamente. Coloque el DAG (ejercicio1_pipeline.py) en la carpeta dags de su instalación de Airflow.
 
-Paso 3: Instalar dependencias
+### Paso 3: Instalar dependencias
 Instale los paquetes Python necesarios en su entorno Airflow:
 
 
 pip install pandas peticiones
-Paso 4: Añadir Token de GitHub 
+### Paso 4: Añadir Token de GitHub 
 Para subir el archivo procesado de nuevo a GitHub, asegúrese de que su token de la API de GitHub está incluido en el código. Reemplace el TOKEN en la función process_and_save:
 
 headers = {«Authorization»: f «token YOUR_GITHUB_TOKEN»}
 
-Paso 5: Ejecutar el pipeline
+### Paso 5: Ejecutar el pipeline
 
 
 En la interfaz de usuario de Airflow, active el DAG github_data_processing.
 
-Paso 6: Resultados
+### Paso 6: Resultados
 Los datos limpiados y procesados se cargarán en la carpeta ejercicio1/processed de este repositorio.
