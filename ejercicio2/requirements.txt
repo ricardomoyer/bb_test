@@ -1,0 +1,40 @@
+fuentes:
+
+- acceso a f1 (crm propietario) con api o conector personalizado
+- cdc o réplicas read-only para f2 (sql server) y f3 (postgres)
+- extracción incremental de campos relevantes: id cliente, datos demográficos, contacto (f1), más transacciones (fecha, producto, monto) de f2 y f3
+
+
+ingestion & transformación:
+
+-almacenamiento raw en un data lake (s3/gcs), conservando datos originales
+-capa staging para normalizar nombres, tipos y llaves
+-creación de un modelo integrado con dimensiones (cliente, producto) y hechos (transacciones) en un dwh
+-uso de spark y/o dbt para transformaciones; python para validaciones adicionales
+-workflow orquestado por airflow, ejecución diaria o incremental
+
+
+almacenamiento y análisis:
+
+-dwh cloud (ej. snowflake, bigquery) para consultas sql operativas
+-data lake con formatos parquet/delta para el equipo de ciencia de datos
+-base de grafos (neo4j u otra) para análisis de relaciones complejas
+-permitir queries sql operativas, ds pipelines, y algoritmos de grafos/cluster
+
+
+seguridad y gobernanza:
+
+-cifrado en tránsito (tls) y en reposo (kms)
+-gestión de accesos por roles y secret management (vault)
+-vpc privada sin endpoints públicos
+-catalogación de metadatos con collibra, glue o atlas
+-tracking de linaje con openlineage, versionado en git/dbt
+-auditoría continua y logging centralizado de accesos y cambios
+
+
+requisitos operativos:
+
+-mínimo impacto a las fuentes productivas (cdc, réplicas, off-peak extract)
+-orquestación flexible y escalable (airflow)
+-trazabilidad y documentación completa del pipeline
+-proceso de mdm para mantener coherencia en identificadores globales (id cliente, id producto)
